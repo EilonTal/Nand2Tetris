@@ -53,6 +53,7 @@ void getLinesFromFile(string path_to_file, vector<string>& lines)
     string line;
     for (int i = 0; getline(input, line); i++)
         lines.push_back(line);
+    input.close();
 }
 
 int main(int argc, char ** argv)
@@ -64,11 +65,14 @@ int main(int argc, char ** argv)
         getLinesFromDirectory(input_path_str, lines);
     else
         getLinesFromFile(input_path_str ,lines);
-    Command_Handler commandHandler(input_path_str, getNameOfOutputFile(input_path_str));
-    for (string line : lines)
+    ofstream output_file(getNameOfOutputFile(input_path_str));
+    string full_file_name_without_suffix = input_path_str.substr(0, input_path_str.find(".vm"));
+    string file_name_without_suffix = full_file_name_without_suffix.substr
+            (full_file_name_without_suffix.find_last_of('\\') + 1);
+    Command_Handler commandHandler(output_file, lines, file_name_without_suffix);
+    while (commandHandler.isThereAnotherCommand())
     {
-        Command_Handler
+        commandHandler.advance();
     }
-
     return 0;
 }

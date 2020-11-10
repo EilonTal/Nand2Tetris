@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/Branching_Handler.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Branching_Handler.cpp.obj"
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/Command_Handler.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Command_Handler.cpp.obj"
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/Function_Handler.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Function_Handler.cpp.obj"
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/Logical_And_Arithmetic_Handler.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Logical_And_Arithmetic_Handler.cpp.obj"
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/Memory_Access_Handler.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Memory_Access_Handler.cpp.obj"
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/Utils.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Utils.cpp.obj"
-  "D:/Projects/nand2tetris/projects/07/My VM Translator/main.cpp" "D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/main.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Branching_Handler.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Command_Handler.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Command_Handler.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Function_Handler.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Function_Handler.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Logical_And_Arithmetic_Handler.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Logical_And_Arithmetic_Handler.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Memory_Access_Handler.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Memory_Access_Handler.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/Utils.cpp.obj"
+  "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/main.cpp" "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/CMakeFiles/My_VM_Translator.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

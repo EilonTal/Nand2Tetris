@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Projects/nand2tetris/projects/07/My VM Translator/Branching_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.h
 string
 -
 stack
@@ -14,25 +14,23 @@ stack
 iostream
 -
 Utils.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Utils.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
 
-D:/Projects/nand2tetris/projects/07/My VM Translator/Command_Handler.cpp
-Command_Handler.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Command_Handler.h
-
-D:/Projects/nand2tetris/projects/07/My VM Translator/Command_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Command_Handler.h
 fstream
 -
 Function_Handler.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Function_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Function_Handler.h
 Logical_And_Arithmetic_Handler.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Logical_And_Arithmetic_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Logical_And_Arithmetic_Handler.h
 Memory_Access_Handler.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Memory_Access_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Memory_Access_Handler.h
 Branching_Handler.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Branching_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.h
+filesystem
+-
 
-D:/Projects/nand2tetris/projects/07/My VM Translator/Function_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Function_Handler.h
 string
 -
 stack
@@ -40,9 +38,9 @@ stack
 iostream
 -
 Utils.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Utils.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
 
-D:/Projects/nand2tetris/projects/07/My VM Translator/Logical_And_Arithmetic_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Logical_And_Arithmetic_Handler.h
 string
 -
 iostream
@@ -50,9 +48,9 @@ iostream
 fstream
 -
 Utils.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Utils.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
 
-D:/Projects/nand2tetris/projects/07/My VM Translator/Memory_Access_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Memory_Access_Handler.h
 string
 -
 stack
@@ -62,9 +60,9 @@ iostream
 fstream
 -
 Utils.h
-D:/Projects/nand2tetris/projects/07/My VM Translator/Utils.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
 
-D:/Projects/nand2tetris/projects/07/My VM Translator/Utils.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
 string
 -
 sstream
@@ -72,5 +70,15 @@ sstream
 vector
 -
 iterator
+-
+
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/main.cpp
+Command_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Command_Handler.h
+filesystem
+-
+string
+-
+iostream
 -
 

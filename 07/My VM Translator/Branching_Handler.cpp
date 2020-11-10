@@ -30,3 +30,11 @@ void Branching_Handler::handleLabel(ofstream &output_file)
 {
 
 }
+
+bool Branching_Handler::didJump() {
+    return false;
+}
+
+int Branching_Handler::getNewCommandIndex() {
+    return 0;
+}

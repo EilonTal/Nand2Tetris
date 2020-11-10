@@ -38,19 +38,19 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\Projects\nand2tetris\projects\07\My VM Translator"
+CMAKE_SOURCE_DIR = "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles\My_VM_Translator.dir\depend.make
@@ -63,135 +63,135 @@ include CMakeFiles\My_VM_Translator.dir\flags.make
 
 CMakeFiles\My_VM_Translator.dir\main.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\main.cpp.obj: ..\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/My_VM_Translator.dir/main.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\main.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/My_VM_Translator.dir/main.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\main.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\main.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/main.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\main.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\main.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\main.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/main.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\main.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\main.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\main.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\main.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.obj: ..\Command_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/My_VM_Translator.dir/Command_Handler.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\Command_Handler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/My_VM_Translator.dir/Command_Handler.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Command_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/Command_Handler.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\Command_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Command_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/Command_Handler.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\Command_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Command_Handler.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Command_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.obj: ..\Logical_And_Arithmetic_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/My_VM_Translator.dir/Logical_And_Arithmetic_Handler.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\Logical_And_Arithmetic_Handler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/My_VM_Translator.dir/Logical_And_Arithmetic_Handler.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Logical_And_Arithmetic_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/Logical_And_Arithmetic_Handler.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\Logical_And_Arithmetic_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Logical_And_Arithmetic_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/Logical_And_Arithmetic_Handler.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\Logical_And_Arithmetic_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Logical_And_Arithmetic_Handler.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Logical_And_Arithmetic_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.obj: ..\Memory_Access_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/My_VM_Translator.dir/Memory_Access_Handler.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\Memory_Access_Handler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/My_VM_Translator.dir/Memory_Access_Handler.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Memory_Access_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/Memory_Access_Handler.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\Memory_Access_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Memory_Access_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/Memory_Access_Handler.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\Memory_Access_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Memory_Access_Handler.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Memory_Access_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.obj: ..\Branching_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/My_VM_Translator.dir/Branching_Handler.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\Branching_Handler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/My_VM_Translator.dir/Branching_Handler.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Branching_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/Branching_Handler.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\Branching_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Branching_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/Branching_Handler.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\Branching_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Branching_Handler.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Branching_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.obj: ..\Function_Handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/My_VM_Translator.dir/Function_Handler.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\Function_Handler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/My_VM_Translator.dir/Function_Handler.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Function_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/Function_Handler.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\Function_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Function_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/Function_Handler.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\Function_Handler.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Function_Handler.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Utils.cpp.obj: CMakeFiles\My_VM_Translator.dir\flags.make
 CMakeFiles\My_VM_Translator.dir\Utils.cpp.obj: ..\Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/My_VM_Translator.dir/Utils.cpp.obj"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Utils.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "D:\Projects\nand2tetris\projects\07\My VM Translator\Utils.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/My_VM_Translator.dir/Utils.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\My_VM_Translator.dir\Utils.cpp.obj /FdCMakeFiles\My_VM_Translator.dir\ /FS -c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Utils.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/My_VM_Translator.dir/Utils.cpp.i"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Utils.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\nand2tetris\projects\07\My VM Translator\Utils.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe > CMakeFiles\My_VM_Translator.dir\Utils.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Utils.cpp"
 <<
 
 CMakeFiles\My_VM_Translator.dir\Utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/My_VM_Translator.dir/Utils.cpp.s"
-	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Utils.cpp.s /c "D:\Projects\nand2tetris\projects\07\My VM Translator\Utils.cpp"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\My_VM_Translator.dir\Utils.cpp.s /c "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\Utils.cpp"
 <<
 
 # Object files for target My_VM_Translator
@@ -216,9 +216,9 @@ My_VM_Translator.exe: CMakeFiles\My_VM_Translator.dir\Function_Handler.cpp.obj
 My_VM_Translator.exe: CMakeFiles\My_VM_Translator.dir\Utils.cpp.obj
 My_VM_Translator.exe: CMakeFiles\My_VM_Translator.dir\build.make
 My_VM_Translator.exe: CMakeFiles\My_VM_Translator.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable My_VM_Translator.exe"
-	"D:\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\My_VM_Translator.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1425~1.286\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\My_VM_Translator.dir\objects1.rsp @<<
- /out:My_VM_Translator.exe /implib:My_VM_Translator.lib /pdb:"D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\My_VM_Translator.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable My_VM_Translator.exe"
+	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\My_VM_Translator.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1423~1.281\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\My_VM_Translator.dir\objects1.rsp @<<
+ /out:My_VM_Translator.exe /implib:My_VM_Translator.lib /pdb:"C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\My_VM_Translator.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
@@ -231,6 +231,6 @@ CMakeFiles\My_VM_Translator.dir\clean:
 .PHONY : CMakeFiles\My_VM_Translator.dir\clean
 
 CMakeFiles\My_VM_Translator.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" "D:\Projects\nand2tetris\projects\07\My VM Translator" "D:\Projects\nand2tetris\projects\07\My VM Translator" "D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug" "D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug" "D:\Projects\nand2tetris\projects\07\My VM Translator\cmake-build-debug\CMakeFiles\My_VM_Translator.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator" "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator" "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug" "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug" "C:\Users\eilon\Desktop\Nand2Tetris\07\My VM Translator\cmake-build-debug\CMakeFiles\My_VM_Translator.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles\My_VM_Translator.dir\depend
 
