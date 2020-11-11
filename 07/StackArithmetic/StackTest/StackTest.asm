@@ -17,13 +17,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isEqual
+@Label0
 D;JEQ
 M = 0
-(isEqual)
+@Label1
+0;JMP
+(Label0)
 @SP
 A = M - 1
 M = 1
+(Label1)
 @17
 D = A
 @SP
@@ -43,13 +46,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isEqual
+@Label2
 D;JEQ
 M = 0
-(isEqual)
+@Label3
+0;JMP
+(Label2)
 @SP
 A = M - 1
 M = 1
+(Label3)
 @16
 D = A
 @SP
@@ -69,13 +75,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isEqual
+@Label4
 D;JEQ
 M = 0
-(isEqual)
+@Label5
+0;JMP
+(Label4)
 @SP
 A = M - 1
 M = 1
+(Label5)
 @892
 D = A
 @SP
@@ -95,13 +104,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isLt
+@Label6
 D;JLT
 M = 0
-(isLt)
+@Label7
+0;JMP
+(Label6)
 @SP
 A = M - 1
 M = 1
+(Label7)
 @891
 D = A
 @SP
@@ -121,13 +133,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isLt
+@Label8
 D;JLT
 M = 0
-(isLt)
+@Label9
+0;JMP
+(Label8)
 @SP
 A = M - 1
 M = 1
+(Label9)
 @891
 D = A
 @SP
@@ -147,13 +162,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isLt
+@Label10
 D;JLT
 M = 0
-(isLt)
+@Label11
+0;JMP
+(Label10)
 @SP
 A = M - 1
 M = 1
+(Label11)
 @32767
 D = A
 @SP
@@ -173,13 +191,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isGt
+@Label12
 D;JGT
 M = 0
-(isGt)
+@Label13
+0;JMP
+(Label12)
 @SP
 A = M - 1
 M = 1
+(Label13)
 @32766
 D = A
 @SP
@@ -199,13 +220,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isGt
+@Label14
 D;JGT
 M = 0
-(isGt)
+@Label15
+0;JMP
+(Label14)
 @SP
 A = M - 1
 M = 1
+(Label15)
 @32766
 D = A
 @SP
@@ -225,13 +249,16 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@isGt
+@Label16
 D;JGT
 M = 0
-(isGt)
+@Label17
+0;JMP
+(Label16)
 @SP
 A = M - 1
 M = 1
+(Label17)
 @57
 D = A
 @SP

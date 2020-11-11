@@ -19,6 +19,7 @@ class Command_Handler
     string current_command;
     int current_command_index;
     string file_name_without_suffix;
+    int label_index;
     ofstream& output_file;
     vector <string>& lines;
     bool isCommandArithmeticOrLogic(string first_word);

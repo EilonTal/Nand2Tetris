@@ -5,7 +5,7 @@
 #include "Command_Handler.h"
 Command_Handler::Command_Handler(ofstream & output_file, vector<string>& lines, string file_name_without_suffix):
  current_command(), output_file(output_file), lines(lines),
- current_command_index(0), file_name_without_suffix(file_name_without_suffix)
+ current_command_index(0), file_name_without_suffix(file_name_without_suffix), label_index(0)
 {
     int index_start = file_name_without_suffix.find_last_of('\\');
     int size = file_name_without_suffix.size();
@@ -62,7 +62,7 @@ void Command_Handler::advance()
                 token = getTokenWithoutAnnotation(token);
             }
             if (isCommandArithmeticOrLogic(first_word)) {
-                Logical_And_Arithmetic_Handler obj(current_command, output_file, tokens);
+                Logical_And_Arithmetic_Handler obj(current_command, output_file, tokens, label_index);
                 current_command_index++;
             }
             else if (isCommandBranch(first_word)) {

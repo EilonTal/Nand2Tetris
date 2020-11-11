@@ -14,8 +14,10 @@ using namespace std;
 class Logical_And_Arithmetic_Handler
 {
     string current_command;
+    int & label_index;
 public:
-    explicit Logical_And_Arithmetic_Handler(string current_command, ofstream &output_file, vector<string> tokens);
+    explicit Logical_And_Arithmetic_Handler(string current_command, ofstream &output_file,
+                                            vector<string> tokens, int & label_index);
     void handleAdd(ofstream &output_file);
     void handleSub(ofstream &output_file);
     void handleNeg(ofstream &output_file);
