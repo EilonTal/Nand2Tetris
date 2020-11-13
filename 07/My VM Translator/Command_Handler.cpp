@@ -66,9 +66,8 @@ void Command_Handler::advance()
                 current_command_index++;
             }
             else if (isCommandBranch(first_word)) {
-                Branching_Handler obj(current_command, output_file, tokens);
-                if (obj.didJump())
-                    current_command_index = obj.getNewCommandIndex();
+                Branching_Handler obj(current_command, output_file,
+                                      tokens, current_command_index, lines);
             }
             else if (isCommandFunction(first_word)) {
                 Function_Handler obj(current_command, output_file, tokens);

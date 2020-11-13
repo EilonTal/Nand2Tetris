@@ -15,6 +15,9 @@ using namespace std;
 class Function_Handler
 {
     string current_command;
+    void handle_call();
+    void handle_function();
+    void handle_return();
 public:
     explicit Function_Handler(string current_command, ofstream& output_file, vector<string> tokens);
     ~Function_Handler() = default;
