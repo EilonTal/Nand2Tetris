@@ -70,7 +70,7 @@ void Command_Handler::advance()
                                       tokens, current_command_index, lines);
             }
             else if (isCommandFunction(first_word)) {
-                Function_Handler obj(current_command, output_file, tokens);
+                Function_Handler obj(current_command, output_file, tokens, label_index);
                 current_command_index++;
             }
             else if (isCommandMemoryAccess(first_word)) {

@@ -8,6 +8,7 @@
 #include <string>
 #include <stack>
 #include <iostream>
+#include <fstream>
 #include "Utils.h"
 
 using namespace std;
@@ -15,11 +16,15 @@ using namespace std;
 class Function_Handler
 {
     string current_command;
+    ofstream& output_file;
+    vector<string>& tokens;
+    int & label_index;
     void handle_call();
     void handle_function();
     void handle_return();
 public:
-    explicit Function_Handler(string current_command, ofstream& output_file, vector<string> tokens);
+    explicit Function_Handler(string current_command, ofstream& output_file,
+                              vector<string>& tokens, int & label_index);
     ~Function_Handler() = default;
 };
 
