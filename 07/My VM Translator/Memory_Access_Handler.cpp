@@ -85,11 +85,10 @@ void Memory_Access_Handler::handlePush(ofstream &output_file)
     }
     if (memory_segment == "temp")
     {
+        output_file << "@" << num_cell << endl;
+        output_file << "D = A" << endl;
         output_file << "@5" << endl;
-        for (int i = 0; i < num_cell; i++)
-        {
-            output_file << "A = A + 1" << endl;
-        }
+        output_file << "A = A + D" << endl;
     }
     if (memory_segment == "static")
     {
@@ -116,8 +115,7 @@ void Memory_Access_Handler::handlePush(ofstream &output_file)
         output_file << "D = M" << endl;
     }
     output_file << "@SP" << endl;
-    output_file << "A = M" << endl;
-    output_file << "M = D" << endl;
-    output_file << "@SP" << endl;
     output_file << "M = M + 1" << endl;
+    output_file << "A = M - 1" << endl;
+    output_file << "M = D" << endl;
 }

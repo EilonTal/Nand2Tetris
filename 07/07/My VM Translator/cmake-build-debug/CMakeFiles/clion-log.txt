@@ -1,4 +1,0 @@
-"D:\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "D:\Projects\nand2tetris\projects\07\My VM Translator"
--- Configuring done
--- Generating done
--- Build files have been written to: D:/Projects/nand2tetris/projects/07/My VM Translator/cmake-build-debug
