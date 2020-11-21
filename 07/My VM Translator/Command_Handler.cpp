@@ -41,6 +41,7 @@ bool Command_Handler::isCommandBranch(string first_word)
     return false;
 }
 
+
 bool Command_Handler::isCommandFunction(string first_word)
 {
     if (first_word == "function" || first_word == "call" || first_word == "return")
@@ -68,6 +69,7 @@ void Command_Handler::advance()
             else if (isCommandBranch(first_word)) {
                 Branching_Handler obj(current_command, output_file,
                                       tokens, current_command_index, lines);
+                output_file << "ended" << endl;
             }
             else if (isCommandFunction(first_word)) {
                 Function_Handler obj(current_command, output_file, tokens, label_index);

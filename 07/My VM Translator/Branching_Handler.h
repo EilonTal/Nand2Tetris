@@ -20,13 +20,14 @@ class Branching_Handler
     ofstream & output_file;
     vector<string> tokens;
     vector<string>& lines;
-    bool did_jump;
+    bool flag_did_jump;
     void handleIfGoto();
     void handleGoto();
     void handleLabel();
 public:
     explicit Branching_Handler(string current_command, ofstream& output_file,
                                vector<string>& tokens ,int& current_command_index, vector<string>& lines);
+    bool didJump();
     ~Branching_Handler() = default;
 };
 

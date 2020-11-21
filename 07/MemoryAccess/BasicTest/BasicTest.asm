@@ -8,9 +8,7 @@ M = D
 AM = M - 1
 D = M
 @LCL
-D = M
-@0
-A = D + A
+A = M
 M = D
 @21
 D = A
@@ -28,17 +26,16 @@ M = D
 AM = M - 1
 D = M
 @ARG
-D = M
-@2
-A = D + A
+A = M
+A = A + 1
+A = A + 1
 M = D
 @SP
 AM = M - 1
 D = M
 @ARG
-D = M
-@1
-A = D + A
+A = M
+A = A + 1
 M = D
 @36
 D = A
@@ -50,9 +47,13 @@ M = D
 AM = M - 1
 D = M
 @THIS
-D = M
-@6
-A = D + A
+A = M
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
 M = D
 @42
 D = A
@@ -70,17 +71,20 @@ M = D
 AM = M - 1
 D = M
 @THAT
-D = M
-@5
-A = D + A
+A = M
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
 M = D
 @SP
 AM = M - 1
 D = M
 @THAT
-D = M
-@2
-A = D + A
+A = M
+A = A + 1
+A = A + 1
 M = D
 @510
 D = A
@@ -91,10 +95,13 @@ M = D
 @SP
 AM = M - 1
 D = M
-@6
-D = A
 @5
-A = A + D
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
 M = D
 @LCL
 D = M

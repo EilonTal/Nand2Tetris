@@ -19,12 +19,14 @@ class Function_Handler
     ofstream& output_file;
     vector<string>& tokens;
     int & label_index;
+    bool flag_did_jump;
     void handle_call();
     void handle_function();
     void handle_return();
 public:
     explicit Function_Handler(string current_command, ofstream& output_file,
                               vector<string>& tokens, int & label_index);
+    bool didJump();
     ~Function_Handler() = default;
 };
 

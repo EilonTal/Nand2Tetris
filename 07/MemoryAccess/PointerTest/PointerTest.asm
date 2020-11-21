@@ -30,9 +30,9 @@ M = D
 AM = M - 1
 D = M
 @THIS
-D = M
-@2
-A = D + A
+A = M
+A = A + 1
+A = A + 1
 M = D
 @46
 D = A
@@ -44,9 +44,13 @@ M = D
 AM = M - 1
 D = M
 @THAT
-D = M
-@6
-A = D + A
+A = M
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
+A = A + 1
 M = D
 @THIS
 D = M

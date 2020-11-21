@@ -16,6 +16,7 @@
 
 class Command_Handler
 {
+    string test;
     string current_command;
     int current_command_index;
     string file_name_without_suffix;
