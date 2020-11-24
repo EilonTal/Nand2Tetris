@@ -1,11 +1,9 @@
 #include "Command_Handler.h"
 #include <filesystem>
 #include <string>
-#include <iostream>
 
 
-void getLinesFromFile(string path_to_file, vector<string>& lines);
-
+void handleLinesFromFile(string path_to_file, ofstream & output_file);
 
 
 inline bool doesPathEndWithBackslash(string file)
@@ -36,43 +34,40 @@ string getNameOfOutputFile(string file)
 
 
 
-void getLinesFromDirectory(string path_to_dir, vector<string>& lines)
+void handleLinesFromDir(string path_to_dir, ofstream & output_file)
 {
     string path_to_file;
     for (const auto & entry : std::filesystem::directory_iterator(path_to_dir))
     {
         path_to_file = entry.path().string();
         if (path_to_file.find(".vm") != string::npos)
-            getLinesFromFile(path_to_file, lines);
+            handleLinesFromFile(path_to_file, output_file);
     }
 }
 
-void getLinesFromFile(string path_to_file, vector<string>& lines)
+void handleLinesFromFile(string path_to_file, ofstream & output_file)
 {
-    ifstream input(path_to_file);
+
+    ifstream input_file (path_to_file);
+    string full_file_name_without_suffix = path_to_file.substr(0, path_to_file.find(".vm"));
+    string file_name_without_suffix = full_file_name_without_suffix.substr
+            (full_file_name_without_suffix.find_last_of('\\') + 1);
+    Command_Handler commandHandler(output_file, file_name_without_suffix);
     string line;
-    for (int i = 0; getline(input, line); i++)
-        lines.push_back(line);
-    input.close();
+    for (int i = 0; getline(input_file, line); i++)
+    {
+        commandHandler.advance(line);
+    }
 }
 
 int main(int argc, char ** argv)
 {
     vector<string> lines;
     string input_path_str = argv[1];
-    std::filesystem::path path = input_path_str;
+    ofstream output_file (getNameOfOutputFile(input_path_str));
     if (std::filesystem::is_directory(input_path_str))
-        getLinesFromDirectory(input_path_str, lines);
+        handleLinesFromDir(input_path_str, output_file);
     else
-        getLinesFromFile(input_path_str ,lines);
-    ofstream output_file(getNameOfOutputFile(input_path_str));
-    string full_file_name_without_suffix = input_path_str.substr(0, input_path_str.find(".vm"));
-    string file_name_without_suffix = full_file_name_without_suffix.substr
-            (full_file_name_without_suffix.find_last_of('\\') + 1);
-    Command_Handler commandHandler(output_file, lines, file_name_without_suffix);
-    while (commandHandler.isThereAnotherCommand())
-    {
-        commandHandler.advance();
-    }
+        handleLinesFromFile(input_path_str, output_file);
     return 0;
 }

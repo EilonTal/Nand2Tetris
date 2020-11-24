@@ -13,20 +13,19 @@ using namespace std;
 
 class Logical_And_Arithmetic_Handler
 {
-    string current_command;
     int & label_index;
+    ofstream & output_file;
 public:
-    explicit Logical_And_Arithmetic_Handler(string current_command, ofstream &output_file,
-                                            vector<string> tokens, int & label_index);
-    void handleAdd(ofstream &output_file);
-    void handleSub(ofstream &output_file);
-    void handleNeg(ofstream &output_file);
-    void handleEq(ofstream &output_file);
-    void handleGt(ofstream &output_file);
-    void handleLt(ofstream &output_file);
-    void handleAnd(ofstream &output_file);
-    void handleOr(ofstream &output_file);
-    void handleNot(ofstream &output_file);
+    explicit Logical_And_Arithmetic_Handler(ofstream & output_file, vector<string> tokens, int & label_index);
+    void handleAdd();
+    void handleSub();
+    void handleNeg();
+    void handleEq();
+    void handleGt();
+    void handleLt();
+    void handleAnd();
+    void handleOr();
+    void handleNot();
     ~Logical_And_Arithmetic_Handler() = default;
 };
 

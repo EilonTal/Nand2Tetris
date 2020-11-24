@@ -16,21 +16,16 @@
 
 class Command_Handler
 {
-    string test;
-    string current_command;
-    int current_command_index;
     string file_name_without_suffix;
     int label_index;
     ofstream& output_file;
-    vector <string>& lines;
     bool isCommandArithmeticOrLogic(string first_word);
     bool isCommandMemoryAccess(string first_word);
     bool isCommandBranch(string first_word);
     bool isCommandFunction(string first_word);
 public:
-    explicit Command_Handler(ofstream & output_file, vector<string>& lines, string file_name_without_suffix);
-    bool isThereAnotherCommand();
-    void advance();
+    explicit Command_Handler(ofstream & output_file, string file_name_without_suffix);
+    void advance(string current_command);
     ~Command_Handler();
 };
 

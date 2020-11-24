@@ -3,10 +3,8 @@
 //
 
 #include "Function_Handler.h"
-Function_Handler::Function_Handler(string current_command, ofstream& output_file,
-                                   vector<string>& tokens, int & label_index):
-current_command(current_command), output_file(output_file), tokens(tokens),
-label_index(label_index), flag_did_jump(false)
+Function_Handler::Function_Handler(ofstream& output_file, vector<string>& tokens, int & label_index):
+output_file(output_file), tokens(tokens), label_index(label_index)
 {
     string first_word = tokens[0];
     if (first_word == "call")
@@ -140,7 +138,6 @@ void Function_Handler::handle_function()
 
 void Function_Handler::handle_return()
 {
-    flag_did_jump = true;
 
     //region init end frame var
 
@@ -237,8 +234,4 @@ void Function_Handler::handle_return()
     output_file << "0;JMP" << endl;
 
     //endregion
-}
-
-bool Function_Handler::didJump() {
-    return false;
 }

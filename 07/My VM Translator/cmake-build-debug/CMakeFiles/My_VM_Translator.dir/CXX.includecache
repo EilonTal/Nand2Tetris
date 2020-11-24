@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.cpp
+Branching_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.h
+
 C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.h
 string
 -
@@ -36,6 +40,10 @@ C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Branching_Handler.h
 filesystem
 -
 
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Function_Handler.cpp
+Function_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Function_Handler.h
+
 C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Function_Handler.h
 string
 -
@@ -48,6 +56,10 @@ fstream
 Utils.h
 C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
 
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Logical_And_Arithmetic_Handler.cpp
+Logical_And_Arithmetic_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Logical_And_Arithmetic_Handler.h
+
 C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Logical_And_Arithmetic_Handler.h
 string
 -
@@ -57,6 +69,10 @@ fstream
 -
 Utils.h
 C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Utils.h
+
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Memory_Access_Handler.cpp
+Memory_Access_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Memory_Access_Handler.h
 
 C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Memory_Access_Handler.h
 string
@@ -78,5 +94,13 @@ sstream
 vector
 -
 iterator
+-
+
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/main.cpp
+Command_Handler.h
+C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/Command_Handler.h
+filesystem
+-
+string
 -
 
