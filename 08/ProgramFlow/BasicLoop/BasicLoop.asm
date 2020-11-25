@@ -10,7 +10,7 @@ D = M
 @LCL
 A = M
 M = D
-@LOOP_START
+(LOOP_START)
 @ARG
 D = M
 @0
@@ -30,8 +30,7 @@ M = M + 1
 A = M - 1
 M = D
 @SP
-M = M - 1
-A = M
+AM = M - 1
 D = M
 A = A - 1
 M = D + M
@@ -57,8 +56,7 @@ M = M + 1
 A = M - 1
 M = D
 @SP
-M = M - 1
-A = M
+AM = M - 1
 D = M
 A = A - 1
 M = D - M
@@ -79,7 +77,7 @@ M = M + 1
 A = M - 1
 M = D
 @SP
-A = M - 1
+AM = M - 1
 D = M
 @LOOP_START
 D;JNE

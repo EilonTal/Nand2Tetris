@@ -19,7 +19,7 @@ tokens(tokens), output_file(output_file)
 void Branching_Handler::handleIfGoto()
 {
     output_file << "@SP" << endl;
-    output_file << "A = M - 1" << endl;
+    output_file << "AM = M - 1" << endl;
     output_file << "D = M" << endl;
     output_file << "@" << tokens[1] << endl;
     output_file << "D;JNE" << endl;
@@ -33,5 +33,5 @@ void Branching_Handler::handleGoto()
 
 void Branching_Handler::handleLabel()
 {
-    output_file << "@" << tokens[1] << endl;
+    output_file << "(" << tokens[1] << ")" << endl;
 }
