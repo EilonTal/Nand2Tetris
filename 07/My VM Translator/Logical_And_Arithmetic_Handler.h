@@ -15,6 +15,7 @@ class Logical_And_Arithmetic_Handler
 {
     int & label_index;
     ofstream & output_file;
+    int get_new_label_index();
 public:
     explicit Logical_And_Arithmetic_Handler(ofstream & output_file, vector<string> tokens, int & label_index);
     void handleAdd();

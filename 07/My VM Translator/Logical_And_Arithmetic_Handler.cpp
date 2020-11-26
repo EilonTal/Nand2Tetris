@@ -57,68 +57,71 @@ void Logical_And_Arithmetic_Handler::handleNeg()
 
 void Logical_And_Arithmetic_Handler::handleEq()
 {
+    int label1 = get_new_label_index();
+    int label2 = get_new_label_index();
     output_file << "@SP" << endl;
     output_file << "AM = M - 1" << endl;
     output_file << "D = M" << endl;
     output_file << "A = A - 1" << endl;
     output_file << "D = M-D" << endl;
-    output_file << "@Label" << label_index << endl;
+    output_file << "@Label" << label1 << endl;
     output_file << "D;JEQ" << endl;
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = 0" << endl;
-    output_file << "@Label" << label_index + 1 << endl; // if its == 0 then jump to end
+    output_file << "@Label" << label2 << endl; // if its == 0 then jump to end
     output_file << "0;JMP" << endl;
-    output_file << "(Label" << label_index << ")" << endl;
+    output_file << "(Label" << label1 << ")" << endl;
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = -1" << endl;
-    output_file << "(Label" << label_index + 1 << ")" << endl; // end
-    label_index += 2;
+    output_file << "(Label" << label2 << ")" << endl; // end
 }
 
 void Logical_And_Arithmetic_Handler::handleGt()
 {
+    int label1 = get_new_label_index();
+    int label2 = get_new_label_index();
     output_file << "@SP" << endl;
     output_file << "AMD = M - 1" << endl;
     output_file << "D = M" << endl;
     output_file << "A = A - 1" << endl;
     output_file << "D = M-D" << endl;
-    output_file << "@Label" << label_index << endl;
+    output_file << "@Label" << label1 << endl;
     output_file << "D;JGT" << endl;
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = 0" << endl;
-    output_file << "@Label" << label_index + 1 << endl; // if its == 0 then jump to end
+    output_file << "@Label" << label2 << endl; // if its == 0 then jump to end
     output_file << "0;JMP" << endl;
-    output_file << "(Label" << label_index << ")" << endl;
+    output_file << "(Label" << label1 << ")" << endl;
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = -1" << endl;
-    output_file << "(Label" << label_index + 1 << ")" << endl; // end
-    label_index += 2;
+    output_file << "(Label" << label2 << ")" << endl; // end
 }
 
 void Logical_And_Arithmetic_Handler::handleLt()
 {
+    int label1 = get_new_label_index();
+    int label2 = get_new_label_index();
     output_file << "@SP" << endl;
     output_file << "AM = M - 1" << endl;
     output_file << "D = M" << endl;
     output_file << "A = A - 1" << endl;
     output_file << "D = M-D" << endl;
-    output_file << "@Label" << label_index << endl;
+    output_file << "@Label" << label1 << endl;
     output_file << "D;JLT" << endl;
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = 0" << endl;
-    output_file << "@Label" << label_index + 1 << endl; // if its == 0 then jump to end
+    output_file << "@Label" << label2 << endl; // if its == 0 then jump to end
     output_file << "0;JMP" << endl;
-    output_file << "(Label" << label_index << ")" << endl;
+    output_file << "(Label" << label1 << ")" << endl;
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = -1" << endl;
-    output_file << "(Label" << label_index + 1 << ")" << endl; // end
-    label_index += 2;
+    output_file << "(Label" << label2 << ")" << endl; // end
 }
 
 void Logical_And_Arithmetic_Handler::handleAnd()
@@ -144,4 +147,10 @@ void Logical_And_Arithmetic_Handler::handleNot()
     output_file << "@SP" << endl;
     output_file << "A = M - 1" << endl;
     output_file << "M = !M" << endl;
+}
+
+int Logical_And_Arithmetic_Handler::get_new_label_index()
+{
+    label_index ++;
+    return label_index - 1;
 }

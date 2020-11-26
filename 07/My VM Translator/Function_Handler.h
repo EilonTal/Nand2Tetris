@@ -21,6 +21,7 @@ class Function_Handler
     void handle_call();
     void handle_function();
     void handle_return();
+    int get_new_label_index();
 public:
     explicit Function_Handler( ofstream& output_file, vector<string>& tokens, int & label_index);
     ~Function_Handler() = default;
