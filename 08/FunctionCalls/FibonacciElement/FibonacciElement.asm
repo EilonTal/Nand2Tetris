@@ -1,6 +1,57 @@
+@256
+D = A
+@SP
+M = D
+@retAddress0
+D = A
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@LCL
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@ARG
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@THIS
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@THAT
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@5
+D = A
+@SP
+D = M - D
+@0
+D = D - A
+@ARG
+M = D
+@SP
+D = M
+@LCL
+M = D
+@Sys.init
+0;JMP
+(retAddress0)
 (Main.fibonacci)
 @0
 D = A
+@NOLOCALS2
+D;JEQ
 @var0
 M = D
 (LOOP1)
@@ -12,6 +63,7 @@ M = 0
 MD = M - 1
 @LOOP1
 D;JGT
+(NOLOCALS2)
 @ARG
 D = M
 @0
@@ -32,18 +84,18 @@ AM = M - 1
 D = M
 A = A - 1
 D = M-D
-@Label2
+@Label3
 D;JLT
 @SP
 A = M - 1
 M = 0
-@Label3
+@Label4
 0;JMP
-(Label2)
+(Label3)
 @SP
 A = M - 1
 M = -1
-(Label3)
+(Label4)
 @SP
 AM = M - 1
 D = M
@@ -63,13 +115,14 @@ A = M - 1
 M = D
 @LCL
 D = M
-@endFrame
+@endFrame5
 M = D
 @5
 D = A
-@endFrame
-D = M - D
-@retAddress
+@endFrame5
+A = M - D
+D = M
+@retAddress6
 M = D
 @SP
 AM = M - 1
@@ -81,18 +134,18 @@ M = D
 D = M + 1
 @SP
 M = D
-@endFrame
+@endFrame5
 A = M - 1
 D = M
 @THAT
 M = D
-@endFrame
+@endFrame5
 A = M - 1
 A = A - 1
 D = M
 @THIS
 M = D
-@endFrame
+@endFrame5
 A = M - 1
 A = A - 1
 A = A - 1
@@ -101,12 +154,12 @@ D = M
 M = D
 @4
 D = A
-@endFrame
+@endFrame5
 A = M - D
 D = M
 @LCL
 M = D
-@retAddress
+@retAddress6
 A = M
 0;JMP
 (IF_FALSE)
@@ -131,7 +184,7 @@ D = M
 A = A - 1
 M = D - M
 M = -M
-@Label4
+@retAddress7
 D = A
 @SP
 AM = M + 1
@@ -175,7 +228,7 @@ D = M
 M = D
 @Main.fibonacci
 0;JMP
-(Label4)
+(retAddress7)
 @ARG
 D = M
 @0
@@ -197,7 +250,7 @@ D = M
 A = A - 1
 M = D - M
 M = -M
-@Label5
+@retAddress8
 D = A
 @SP
 AM = M + 1
@@ -241,7 +294,7 @@ D = M
 M = D
 @Main.fibonacci
 0;JMP
-(Label5)
+(retAddress8)
 @SP
 AM = M - 1
 D = M
@@ -249,13 +302,14 @@ A = A - 1
 M = D + M
 @LCL
 D = M
-@endFrame
+@endFrame9
 M = D
 @5
 D = A
-@endFrame
-D = M - D
-@retAddress
+@endFrame9
+A = M - D
+D = M
+@retAddress10
 M = D
 @SP
 AM = M - 1
@@ -267,18 +321,18 @@ M = D
 D = M + 1
 @SP
 M = D
-@endFrame
+@endFrame9
 A = M - 1
 D = M
 @THAT
 M = D
-@endFrame
+@endFrame9
 A = M - 1
 A = A - 1
 D = M
 @THIS
 M = D
-@endFrame
+@endFrame9
 A = M - 1
 A = A - 1
 A = A - 1
@@ -287,11 +341,82 @@ D = M
 M = D
 @4
 D = A
-@endFrame
+@endFrame9
 A = M - D
 D = M
 @LCL
 M = D
-@retAddress
+@retAddress10
 A = M
+0;JMP
+(Sys.init)
+@0
+D = A
+@NOLOCALS13
+D;JEQ
+@var11
+M = D
+(LOOP12)
+@SP
+AM = M + 1
+A = A - 1
+M = 0
+@var11
+MD = M - 1
+@LOOP12
+D;JGT
+(NOLOCALS13)
+@4
+D = A
+@SP
+M = M + 1
+A = M - 1
+M = D
+@retAddress14
+D = A
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@LCL
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@ARG
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@THIS
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@THAT
+D = M
+@SP
+AM = M + 1
+A = A - 1
+M = D
+@5
+D = A
+@SP
+D = M - D
+@1
+D = D - A
+@ARG
+M = D
+@SP
+D = M
+@LCL
+M = D
+@Main.fibonacci
+0;JMP
+(retAddress14)
+(WHILE)
+@WHILE
 0;JMP

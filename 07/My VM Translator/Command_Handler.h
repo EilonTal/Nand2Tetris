@@ -14,10 +14,11 @@
 #include "Branching_Handler.h"
 #include <filesystem>
 
+static int label_index;
+
 class Command_Handler
 {
     string file_name_without_suffix;
-    int label_index;
     ofstream& output_file;
     bool isCommandArithmeticOrLogic(string first_word);
     bool isCommandMemoryAccess(string first_word);
@@ -25,6 +26,7 @@ class Command_Handler
     bool isCommandFunction(string first_word);
 public:
     explicit Command_Handler(ofstream & output_file, string file_name_without_suffix);
+    static void init_label_index();
     void advance(string current_command);
     ~Command_Handler();
 };

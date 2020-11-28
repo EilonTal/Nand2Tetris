@@ -60,14 +60,31 @@ void handleLinesFromFile(string path_to_file, ofstream & output_file)
     }
 }
 
+void init (string path_to_file, ofstream & output_file)
+{
+    string full_file_name_without_suffix = path_to_file.substr(0, path_to_file.find(".vm"));
+    string file_name_without_suffix = full_file_name_without_suffix.substr
+            (full_file_name_without_suffix.find_last_of('\\') + 1);
+    Command_Handler commandHandler(output_file, file_name_without_suffix);
+    output_file << "@256" << endl;
+    output_file << "D = A" << endl;
+    output_file << "@SP" << endl;
+    output_file << "M = D" << endl;
+    string line = "call Sys.init 0";
+    commandHandler.advance(line);
+}
+
 int main(int argc, char ** argv)
 {
     vector<string> lines;
     string input_path_str = argv[1];
     ofstream output_file (getNameOfOutputFile(input_path_str));
+    init(input_path_str, output_file);
+    Command_Handler::init_label_index();
     if (std::filesystem::is_directory(input_path_str))
         handleLinesFromDir(input_path_str, output_file);
     else
         handleLinesFromFile(input_path_str, output_file);
+    output_file.close();
     return 0;
 }

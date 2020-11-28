@@ -4,7 +4,7 @@
 
 #include "Command_Handler.h"
 Command_Handler::Command_Handler(ofstream & output_file, string file_name_without_suffix):
-output_file(output_file), file_name_without_suffix(file_name_without_suffix), label_index(0)
+output_file(output_file), file_name_without_suffix(file_name_without_suffix)
 {
     int index_start = file_name_without_suffix.find_last_of('\\');
     int size = file_name_without_suffix.size();
@@ -72,6 +72,10 @@ void Command_Handler::advance(string current_command)
 
 Command_Handler::~Command_Handler()
 {
-    output_file.close();
+}
+
+void Command_Handler::init_label_index()
+{
+    label_index = 0;
 }
 

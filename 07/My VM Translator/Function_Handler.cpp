@@ -23,7 +23,7 @@ void Function_Handler::handle_call()
     int label_in = get_new_label_index();
 
     // region save return address
-    output_file << "@Label" << label_in << endl;
+    output_file << "@retAddress" << label_in << endl;
     output_file << "D = A" << endl;
     output_file << "@SP" << endl;
     output_file << "AM = M + 1" << endl;
@@ -98,7 +98,7 @@ void Function_Handler::handle_call()
 
     //region insert return address
 
-    output_file << "(Label" << label_in << ")" << endl;
+    output_file << "(retAddress" << label_in << ")" << endl;
 
     //endregion
 
@@ -119,8 +119,11 @@ void Function_Handler::handle_function()
     int num_vars = stoi(num_vars_str);
     int label_in = get_new_label_index();
     int loop_in = get_new_label_index();
+    int end_in = get_new_label_index();
     output_file << "@" << num_vars << endl;
     output_file << "D = A"<< endl;
+    output_file << "@NOLOCALS" << end_in << endl; // go to end if there are 0 args
+    output_file << "D;JEQ" << endl;
     output_file << "@var" << label_in << endl;
     output_file << "M = D" << endl;
     output_file << "(LOOP" << loop_in << ")" << endl;
@@ -132,17 +135,19 @@ void Function_Handler::handle_function()
     output_file << "MD = M - 1" << endl;
     output_file << "@LOOP" << loop_in << endl;
     output_file << "D;JGT" << endl;
+    output_file << "(NOLOCALS" << end_in << ")" << endl;
     //endregion
 }
 
 void Function_Handler::handle_return()
 {
-
+    int end_frame_in = get_new_label_index();
+    int ret_address_in = get_new_label_index();
     //region init end frame var
 
     output_file << "@LCL" << endl;
     output_file << "D = M" << endl;
-    output_file << "@endFrame" << endl;
+    output_file << "@endFrame" << end_frame_in << endl;
     output_file << "M = D" << endl;
 
     //endregion
@@ -151,9 +156,10 @@ void Function_Handler::handle_return()
 
     output_file << "@5" << endl;
     output_file << "D = A" << endl;
-    output_file << "@endFrame" << endl;
-    output_file << "D = M - D" << endl;
-    output_file << "@retAddress" << endl;
+    output_file << "@endFrame" << end_frame_in << endl;
+    output_file << "A = M - D" << endl;
+    output_file << "D = M" << endl;
+    output_file << "@retAddress" << ret_address_in << endl;
     output_file << "M = D" << endl;
 
     //endregion
@@ -180,7 +186,7 @@ void Function_Handler::handle_return()
 
     //region recover THAT
 
-    output_file << "@endFrame" << endl;
+    output_file << "@endFrame" << end_frame_in << endl;
     output_file << "A = M - 1" << endl;
     output_file << "D = M" << endl;
     output_file << "@THAT" << endl;
@@ -191,7 +197,7 @@ void Function_Handler::handle_return()
 
     //region recover THIS
 
-    output_file << "@endFrame" << endl;
+    output_file << "@endFrame" << end_frame_in << endl;
     output_file << "A = M - 1" << endl;
     output_file << "A = A - 1" << endl;
     output_file << "D = M" << endl;
@@ -202,7 +208,7 @@ void Function_Handler::handle_return()
 
     //region recover ARG
 
-    output_file << "@endFrame" << endl;
+    output_file << "@endFrame" << end_frame_in << endl;
     output_file << "A = M - 1" << endl;
     output_file << "A = A - 1" << endl;
     output_file << "A = A - 1" << endl;
@@ -217,7 +223,7 @@ void Function_Handler::handle_return()
 
     output_file << "@4" << endl;
     output_file << "D = A" << endl;
-    output_file << "@endFrame" << endl;
+    output_file << "@endFrame" << end_frame_in << endl;
     output_file << "A = M - D" << endl;
     output_file << "D = M" << endl;
     output_file << "@LCL" << endl;
@@ -227,7 +233,7 @@ void Function_Handler::handle_return()
 
     //region goto return address
 
-    output_file << "@retAddress" << endl;
+    output_file << "@retAddress" << ret_address_in << endl;
     output_file << "A = M" << endl;
     output_file << "0;JMP" << endl;
 
