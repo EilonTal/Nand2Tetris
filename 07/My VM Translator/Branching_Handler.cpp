@@ -4,10 +4,8 @@
 
 #include "Branching_Handler.h"
 
-Branching_Handler::Branching_Handler(string current_command, ofstream &output_file,
-                     vector<string>& tokens, int& current_command_index, vector<string> & lines):
-current_command(current_command),tokens(tokens), flag_did_jump(false),
-output_file(output_file), current_command_index(current_command_index), lines(lines)
+Branching_Handler::Branching_Handler(ofstream &output_file, vector<string>& tokens):
+tokens(tokens), output_file(output_file)
 {
     string first_word = tokens[0];
     if (first_word == "if-goto")
@@ -21,7 +19,7 @@ output_file(output_file), current_command_index(current_command_index), lines(li
 void Branching_Handler::handleIfGoto()
 {
     output_file << "@SP" << endl;
-    output_file << "A = M - 1" << endl;
+    output_file << "AM = M - 1" << endl;
     output_file << "D = M" << endl;
     output_file << "@" << tokens[1] << endl;
     output_file << "D;JNE" << endl;
@@ -35,9 +33,5 @@ void Branching_Handler::handleGoto()
 
 void Branching_Handler::handleLabel()
 {
-    output_file << "@" << tokens[1] << endl;
-}
-
-bool Branching_Handler::didJump() {
-    return false;
+    output_file << "(" << tokens[1] << ")" << endl;
 }

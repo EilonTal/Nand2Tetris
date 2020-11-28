@@ -4,20 +4,20 @@
 
 #include "Memory_Access_Handler.h"
 
-Memory_Access_Handler::Memory_Access_Handler(string current_command,
-                                            ofstream & output_file,string file_name_without_suffix, vector<string> tokens):
-current_command(current_command), file_name_without_suffix(file_name_without_suffix)
+Memory_Access_Handler::Memory_Access_Handler(ofstream & output_file,string file_name_without_suffix,
+                                             vector<string> tokens):
+ file_name_without_suffix(file_name_without_suffix), output_file(output_file)
 {
     string first_word =tokens[0];
     memory_segment = tokens[1];
     num_cell = atoi(tokens[2].c_str());
     if (first_word == "push")
-        handlePush(output_file);
+        handlePush();
     else if (first_word == "pop")
-        handlePop(output_file);
+        handlePop();
 }
 
-void Memory_Access_Handler::handlePop(ofstream &output_file)
+void Memory_Access_Handler::handlePop()
 {
     output_file << "@SP" << endl;
     output_file << "AM = M - 1" << endl;
@@ -66,7 +66,7 @@ void Memory_Access_Handler::handlePop(ofstream &output_file)
     output_file << "M = D" << endl;
 }
 
-void Memory_Access_Handler::handlePush(ofstream &output_file)
+void Memory_Access_Handler::handlePush()
 {
     if (memory_segment == "local" || memory_segment == "argument" ||
         memory_segment == "this" || memory_segment == "that")

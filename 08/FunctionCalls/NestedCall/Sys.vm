@@ -5,15 +5,15 @@
 // Calls Sys.main() and stores return value in temp 1.
 // Does not return.  (Enters infinite loop.)
 
-function Sys.init 0
-push constant 4000	// test THIS and THAT context save
-pop pointer 0
-push constant 5000
-pop pointer 1
-call Sys.main 0
-pop temp 1
-label LOOP
-goto LOOP
+function Sys.init 0 // good
+push constant 4000	// test THIS and THAT context save good
+pop pointer 0 // good
+push constant 5000 // good
+pop pointer 1 // good
+call Sys.main 0 // good
+pop temp 1 // good
+label LOOP // good
+goto LOOP // good
 
 // Sys.main()
 //
@@ -23,19 +23,19 @@ goto LOOP
 // Returns local 0 + local 1 + local 2 + local 3 + local 4 (456) to confirm
 // that locals were not mangled by function call.
 
-function Sys.main 5
-push constant 4001
-pop pointer 0
-push constant 5001
-pop pointer 1
-push constant 200
-pop local 1
-push constant 40
-pop local 2
-push constant 6
-pop local 3
-push constant 123
-call Sys.add12 1
+function Sys.main 5 // good
+push constant 4001 // good
+pop pointer 0 // good
+push constant 5001 // good
+pop pointer 1 // good
+push constant 200 // good
+pop local 1 // good
+push constant 40 // good
+pop local 2 // good
+push constant 6 // good
+pop local 3 // good
+push constant 123 // good
+call Sys.add12 1 // good
 pop temp 0
 push local 0
 push local 1
@@ -52,7 +52,7 @@ return
 //
 // Returns n+12.
 
-function Sys.add12 0
+function Sys.add12 0 // good
 push constant 4002
 pop pointer 0
 push constant 5002

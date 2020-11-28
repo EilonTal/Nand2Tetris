@@ -15,15 +15,14 @@ using namespace std;
 
 class Memory_Access_Handler
 {
-    string current_command;
     string memory_segment;
     string file_name_without_suffix;
+    ofstream &output_file;
     int num_cell;
 public:
-    explicit Memory_Access_Handler(string current_command, ofstream& output_file
-                                   , string file_name_without_suffix, vector<string> tokens);
-    void handlePop(ofstream &output_file);
-    void handlePush(ofstream &output_file);
+    explicit Memory_Access_Handler(ofstream& output_file, string file_name_without_suffix, vector<string> tokens);
+    void handlePop();
+    void handlePush();
     ~Memory_Access_Handler() = default;
 };
 

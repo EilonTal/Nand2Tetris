@@ -15,19 +15,13 @@ using namespace std;
 
 class Branching_Handler
 {
-    string current_command;
-    int& current_command_index;
     ofstream & output_file;
     vector<string> tokens;
-    vector<string>& lines;
-    bool flag_did_jump;
     void handleIfGoto();
     void handleGoto();
     void handleLabel();
 public:
-    explicit Branching_Handler(string current_command, ofstream& output_file,
-                               vector<string>& tokens ,int& current_command_index, vector<string>& lines);
-    bool didJump();
+    explicit Branching_Handler(ofstream& output_file, vector<string>& tokens);
     ~Branching_Handler() = default;
 };
 

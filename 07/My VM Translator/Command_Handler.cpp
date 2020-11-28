@@ -1,22 +1,14 @@
 //
 // Created by Roe on 8/22/2020.
 //
-//s
+
 #include "Command_Handler.h"
-Command_Handler::Command_Handler(ofstream & output_file, vector<string>& lines, string file_name_without_suffix):
- current_command(), output_file(output_file), lines(lines),
- current_command_index(0), file_name_without_suffix(file_name_without_suffix), label_index(0)
+Command_Handler::Command_Handler(ofstream & output_file, string file_name_without_suffix):
+output_file(output_file), file_name_without_suffix(file_name_without_suffix)
 {
     int index_start = file_name_without_suffix.find_last_of('\\');
     int size = file_name_without_suffix.size();
     file_name_without_suffix = file_name_without_suffix.substr(index_start + 1, size - index_start);
-}
-
-bool Command_Handler::isThereAnotherCommand()
-{
-    if(current_command_index == lines.size())
-        return false;
-    return true;
 }
 
 bool Command_Handler::isCommandArithmeticOrLogic(string first_word)
@@ -49,9 +41,9 @@ bool Command_Handler::isCommandFunction(string first_word)
     return false;
 }
 
-void Command_Handler::advance()
+void Command_Handler::advance(string current_command)
 {
-    current_command = lines[current_command_index];
+    current_command = current_command;
     if (!current_command.empty())
     {
         vector<string> tokens = split(current_command, ' ');
@@ -63,33 +55,27 @@ void Command_Handler::advance()
                 token = getTokenWithoutAnnotation(token);
             }
             if (isCommandArithmeticOrLogic(first_word)) {
-                Logical_And_Arithmetic_Handler obj(current_command, output_file, tokens, label_index);
-                current_command_index++;
+                Logical_And_Arithmetic_Handler obj(output_file, tokens, label_index);
             }
             else if (isCommandBranch(first_word)) {
-                Branching_Handler obj(current_command, output_file,
-                                      tokens, current_command_index, lines);
-                output_file << "ended" << endl;
+                Branching_Handler obj(output_file, tokens);
             }
             else if (isCommandFunction(first_word)) {
-                Function_Handler obj(current_command, output_file, tokens, label_index);
-                current_command_index++;
+                Function_Handler obj(output_file, tokens, label_index);
             }
             else if (isCommandMemoryAccess(first_word)) {
-                Memory_Access_Handler obj(current_command,
-                                          output_file, file_name_without_suffix, tokens);
-                current_command_index++;
+                Memory_Access_Handler obj(output_file, file_name_without_suffix, tokens);
             }
         }
-        else
-            current_command_index++;
     }
-    else
-        current_command_index++;
 }
 
 Command_Handler::~Command_Handler()
 {
-    output_file.close();
+}
+
+void Command_Handler::init_label_index()
+{
+    label_index = 0;
 }
 
