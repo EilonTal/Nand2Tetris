@@ -76,7 +76,6 @@ void init (string path_to_file, ofstream & output_file)
 
 int main(int argc, char ** argv)
 {
-    vector<string> lines;
     string input_path_str = argv[1];
     ofstream output_file (getNameOfOutputFile(input_path_str));
     init(input_path_str, output_file);
