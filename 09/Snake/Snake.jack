@@ -1,0 +1,12 @@
+class Snake
+{
+    constructor Snake new()
+    {
+        return this;
+    }
+
+    method void dispose()
+    {
+        return;
+    }
+}
