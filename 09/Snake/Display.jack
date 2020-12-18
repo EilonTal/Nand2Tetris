@@ -1,0 +1,45 @@
+class Display
+{
+    function void displayApple (int x, int y)
+    {
+
+    }
+
+    function void displayOpeningScreen ()
+    {
+
+    }
+
+    function void displayGameScreen ()
+    {
+
+    }
+
+    function void displayHead(int x, int y)
+    {
+
+    }
+    
+    function void displayTail(int x, int y)
+    {
+
+    }
+
+    function void displayBody(int x, int y)
+    {
+        
+    }
+
+    /*  part type:
+        0 - head
+        1 - body
+        2 - tail
+    */
+    function void displaySnakePart(int x, int y, int part_type)
+    {
+
+    }
+
+
+    
+}
