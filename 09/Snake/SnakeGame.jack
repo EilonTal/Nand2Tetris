@@ -1,0 +1,56 @@
+class SnakeGame
+{
+    field Snake snake;
+
+    constructor SnakeGame new()
+    {
+        return this;
+    }
+
+    method void displayOpeningScreen()
+    {
+        return;
+    }
+
+    // shows the game screen
+    // then shows 3..2..1..GO!
+    method void displayGameScreen()
+    {
+        return;
+    }
+
+    method void chooseLevel(char key)
+    {
+        return;
+    }
+
+    method boolean isKeyLevel(char key)
+    {
+        return true;
+    }
+
+    method void start()
+    {
+        var char key;
+        do displayOpeningScreen();
+        let key = Keyboard.keyPressed();
+        while (~(isKeyLevel(key)))
+        {
+            let key = Keyboard.keyPressed();
+        }
+        do chooseLevel(key);
+        do displayGameScreen();
+        do runGame();
+        return;
+    }
+
+    method void runGame()
+    {
+        return;
+    }
+
+    method void dispose()
+    {
+        return;
+    }
+}

@@ -1,0 +1,22 @@
+class Snake
+{
+    field SnakePart head;
+    field SnakePart tail;
+    constructor Snake new()
+    {
+        return this;
+    }
+
+    /*  direction:
+        0 - right
+        1 - down
+        2 - left
+        3 - up
+    */
+    method void move(int direction)
+
+    method void dispose()
+    {
+        return;
+    }
+}
