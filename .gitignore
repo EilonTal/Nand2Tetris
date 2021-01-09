@@ -10,3 +10,15 @@
 *.sh
 *.vm
 *.gif
+*.cmake
+*.exe
+*.obj
+*.log
+*.iml
+*.make
+*.bin
+tools/.DS_Store
+07/My VM Translator/cmake-build-debug/CMakeFiles/Makefile.cmake
+07/My VM Translator/cmake-build-debug/CMakeFiles/clion-log.txt
+.idea/modules.xml
+.idea/.name
