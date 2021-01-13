@@ -7,36 +7,36 @@
 
 #include <fstream>
 #include "JackTokenizer.h"
-using namespace std;
 
 class CompilationEngine
 {
     ifstream & input;
     ofstream & output;
+    JackTokenizer tokenizer;
     enum xml_var_type{
         Keyword, Symbol, IntegerConstant, StringConstant, Identifier,
-        Class, ClassVerDec, Type, SubroutineDec, ParameterList,
-        SubroutineBody, VarDec, ClassName, SubroutineName, VarName,
-        Statement, LetStatement, IfStatement, WhileStatement, DoStatement,
-        ReturnStatement, Expression, Term, SubroutineCall, ExpressionList,
-        Op, UnaryOp, KeywordConstant
+        Class, ClassVerDec, SubroutineDec, ParameterList, SubroutineBody,
+        VarDec, LetStatement, IfStatement, WhileStatement, DoStatement,
+        ReturnStatement, Expression, Term, ExpressionList, Op,
+        UnaryOp, KeywordConstant
     };
-    void OutputStartXmlComm(enum xml_var_type& xmlVarType);
-    void OutputEndXmlComm(enum xml_var_type& xmlVarType);
+    void outputStartXmlComm(xmlVarType xml_var_type);
+    void outputEndXmlComm(xmlVarType xml_var_type);
+    void outputXmlCommAux(xmlVarType xml_var_type);
 public:
     CompilationEngine(ifstream& input, ofstream & output);
-    void CompileClass();
-    void CompileClassVarDec();
-    void CompileSubroutineDec();
-    void CompileParameterList();
-    void CompileSubroutineBody();
-    void CompileVarDec();
-    void CompileStatements();
-    void CompileLet();
-    void CompileIf();
-    void CompileWhile();
-    void CompileDo();
-    void CompileReturn();
+    void compileClass();
+    void compileClassVarDec();
+    void compileSubroutineDec();
+    void compileParameterList();
+    void compileSubroutineBody();
+    void compileVarDec();
+    void compileStatements();
+    void compileLet();
+    void compileIf();
+    void compileWhile();
+    void compileDo();
+    void compileReturn();
 };
 
 
