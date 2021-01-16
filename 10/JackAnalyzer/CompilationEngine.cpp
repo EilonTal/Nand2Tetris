@@ -366,18 +366,122 @@ void CompilationEngine::compileReturn()
 void CompilationEngine::compileExpression()
 {
     outputStartXmlComm(Utils::Expression, end_line);
+
+    //output first term
+    compileTerm();
+
+    while (tokenizer.isTokenBiOp(tokenizer.nextToken()))
+    {
+        // output op
+        tokenizer.advance();
+        outputOneLiner();
+
+        // output next term
+        compileTerm();
+    }
+
     outputEndXmlComm(Utils::Expression, end_line);
 }
 
+// handles subroutine call as well
 void CompilationEngine::compileTerm()
 {
     outputStartXmlComm(Utils::Term, end_line);
+
+    // outputs first token in term
+    tokenizer.advance();
+    outputOneLiner();
+
+    // case of (expression)
+    if (tokenizer.getToken() == "(")
+    {
+        // output expression
+        compileExpression();
+
+        // output ')'
+        tokenizer.advance();
+        outputOneLiner();
+    }
+
+    // case of -term\~term
+    else if (tokenizer.isTokenUnOp(tokenizer.getToken()))
+    {
+        compileTerm();
+    }
+
+     // case of varName[expression]
+    else if (tokenizer.nextToken() == "[")
+    {
+        // output '['
+        tokenizer.advance();
+        outputOneLiner();
+
+        compileExpression();
+
+        // output ']'
+        tokenizer.advance();
+        outputOneLiner();
+    }
+
+    // case of subroutineName(expressionList)
+    else if (tokenizer.nextToken() == "(")
+    {
+        // output '('
+        tokenizer.advance();
+        outputOneLiner();
+
+        compileExpressionList();
+
+        // output ')'
+        tokenizer.advance();
+        outputOneLiner();
+    }
+
+    // case of (className\varName).subroutineName(expressionList)
+    // first brackets are just for understanding - not real
+    // ex.   obj.func(1)
+    else if (tokenizer.nextToken() == ".")
+    {
+        // output '.'
+        tokenizer.advance();
+        outputOneLiner();
+
+        // output subroutineName
+        tokenizer.advance();
+        outputOneLiner();
+
+        // output '('
+        tokenizer.advance();
+        outputOneLiner();
+
+        compileExpressionList();
+
+        // output ')'
+        tokenizer.advance();
+        outputOneLiner();
+    }
+
+    // in any other case only one advance is enough
+
+
     outputEndXmlComm(Utils::Term, end_line);
 }
 
 void CompilationEngine::compileExpressionList()
 {
     outputStartXmlComm(Utils::ExpressionList, end_line);
+
+    while (tokenizer.nextToken() != ")")
+    {
+        compileExpression();
+
+        if (tokenizer.nextToken() == ",")
+        {
+            // output ','
+            tokenizer.advance();
+            outputOneLiner();
+        }
+    }
     outputEndXmlComm(Utils::ExpressionList, end_line);
 }
 

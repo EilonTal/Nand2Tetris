@@ -44,6 +44,10 @@ public:
     // returns next token without advancing
     token nextToken();
 
+    bool isTokenBiOp(token t);
+
+    bool isTokenUnOp(token t);
+
     // returns last token type
     xmlVarType tokenType();
 
