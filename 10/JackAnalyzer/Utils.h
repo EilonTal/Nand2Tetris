@@ -9,13 +9,15 @@
 class Utils
 {
 public:
-    enum xml_var_type{
+    enum xml_var_type
+    {
         Keyword, Symbol, IntegerConstant, StringConstant, Identifier,
         Class, ClassVerDec, SubroutineDec, ParameterList, SubroutineBody,
         VarDec, LetStatement, IfStatement, WhileStatement, DoStatement,
         ReturnStatement, Expression, Term, ExpressionList, Op,
         UnaryOp, KeywordConstant
     };
+    // needs to add a symbol table
 };
 
 

@@ -26,6 +26,8 @@ public:
 
 
     JackTokenizer(ifstream& input_file);
+    JackTokenizer(JackTokenizer& tokenizer) = default;
+    JackTokenizer& operator=(JackTokenizer& tokenizer) = default;
 
     /**
      * advances to the next token
@@ -37,10 +39,16 @@ public:
     bool hasMoreTokens();
 
     // returns last token
-    token getLastToken();
+    token getToken();
+
+    // returns next token without advancing
+    token getNextToken();
 
     // returns last token type
-    xmlVarType getLastTokenType();
+    xmlVarType getTokenType();
+
+    // returns next token type without advancing
+    xmlVarType getNextTokenType();
 };
 
 

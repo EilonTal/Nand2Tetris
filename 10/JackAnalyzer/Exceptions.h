@@ -5,13 +5,36 @@
 #ifndef JACKANALYZER_EXCEPTIONS_H
 #define JACKANALYZER_EXCEPTIONS_H
 
+using namespace std;
 
 class Exceptions
 {
 public:
-    class wrongTokenException{};
-    class wrongTokenTypeException{};
+    virtual string getException() = 0;
 };
 
+class wrongTokenException: public Exceptions
+{
+    string getException()
+    {
+        return "wrongTokenException";
+    }
+};
+
+class wrongTokenTypeException: public Exceptions
+{
+    string getException()
+    {
+        return "wrongTokenTypeException";
+    }
+};
+
+class noTokensLeft: public Exceptions
+{
+    string getException()
+    {
+        return "noTokensLeft";
+    }
+};
 
 #endif //JACKANALYZER_EXCEPTIONS_H
