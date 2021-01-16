@@ -42,13 +42,13 @@ public:
     token getToken();
 
     // returns next token without advancing
-    token getNextToken();
+    token nextToken();
 
     // returns last token type
-    xmlVarType getTokenType();
+    xmlVarType tokenType();
 
     // returns next token type without advancing
-    xmlVarType getNextTokenType();
+    xmlVarType nextTokenType();
 };
 
 

@@ -15,7 +15,7 @@ public:
         Class, ClassVerDec, SubroutineDec, ParameterList, SubroutineBody,
         VarDec, LetStatement, IfStatement, WhileStatement, DoStatement,
         ReturnStatement, Expression, Term, ExpressionList, Op,
-        UnaryOp, KeywordConstant
+        UnaryOp, KeywordConstant, Statements
     };
     // needs to add a symbol table
 };
