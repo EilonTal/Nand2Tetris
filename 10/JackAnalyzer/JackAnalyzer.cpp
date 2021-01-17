@@ -55,14 +55,7 @@ void handleLinesFromFile(string path_to_file)
     string full_file_name_without_suffix = path_to_file.substr(0, path_to_file.find(".jack"));
     string file_name_without_suffix = full_file_name_without_suffix.substr
             (full_file_name_without_suffix.find_last_of('\\') + 1);
-    try
-    {
-        CompilationEngine compiler(input_file, output_file);
-    }
-    catch (Exceptions& exception)
-    {
-        output_file << "exception occurred: " << exception.;
-    }
+    CompilationEngine compiler(input_file, output_file);
     input_file.close();
     output_file.close();
 }
