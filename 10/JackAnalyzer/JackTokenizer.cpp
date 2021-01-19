@@ -21,6 +21,7 @@ JackTokenizer::JackTokenizer(ifstream &input_file)
     };
 }
 
+// todo
 void JackTokenizer::advance()
 {
     if (!hasMoreTokens())
@@ -29,18 +30,17 @@ void JackTokenizer::advance()
     }
     string token_accumulator;
     string accumulator_peek;
-    accumulator_peek += input_file.peek();
+    accumulator_peek += std::to_string(input_file.peek());
     // keep reading if no token was found yet OR next char appended to accumulator is also token
     while (!isToken(token_accumulator) || isToken(accumulator_peek))
     {
-        token_accumulator += input_file.get();
-        accumulator_peek += input_file.peek();
+        token_accumulator += std::to_string(input_file.get());
+        accumulator_peek += std::to_string(input_file.peek());
     }
     last_token = token_accumulator;
 
     // deal with token type
 }
-
 
 bool JackTokenizer::hasMoreTokens()
 {
@@ -56,12 +56,13 @@ token JackTokenizer::getToken()
     return last_token;
 }
 
+// todo
 token JackTokenizer::nextToken()
 {
     return token();
 }
 
-bool JackTokenizer::isToken(string s)
+bool JackTokenizer::isToken(const string& s)
 {
     if (isKeyword(s) || isSymbol(s) || isIntegerConstant(s) || isStringConstant(s) || isIdentifier(s))
     {
@@ -70,7 +71,7 @@ bool JackTokenizer::isToken(string s)
     return false;
 }
 
-bool JackTokenizer::isTokenBiOp(token t)
+bool JackTokenizer::isTokenBiOp(const token& t)
 {
     switch (symbolsMatcher[t])
     {
@@ -89,7 +90,7 @@ bool JackTokenizer::isTokenBiOp(token t)
     }
 }
 
-bool JackTokenizer::isTokenUnOp(token t)
+bool JackTokenizer::isTokenUnOp(const token& t)
 {
     switch (symbolsMatcher[t])
     {
@@ -103,7 +104,7 @@ bool JackTokenizer::isTokenUnOp(token t)
 
 
 
-bool JackTokenizer::isKeyword(string s)
+bool JackTokenizer::isKeyword(const string& s)
 {
     switch (keyWordsMatcher[s])
     {
@@ -134,7 +135,7 @@ bool JackTokenizer::isKeyword(string s)
     }
 }
 
-bool JackTokenizer::isSymbol(string s)
+bool JackTokenizer::isSymbol(const string& s)
 {
     switch (symbolsMatcher[s])
     {
@@ -163,24 +164,59 @@ bool JackTokenizer::isSymbol(string s)
     }
 }
 
-bool JackTokenizer::isIntegerConstant(string s)
+bool JackTokenizer::isIntegerConstant(const string& s)
 {
+    try
+    {
+        int i = stoi(s);
+        if (i >= 0 && i <= 32767)
+        {
+            return true;
+        }
+    }
+    catch (...)
+    {
+        return false;
+    }
     return false;
 }
 
+// todo (reminder string constant is output without "")
 bool JackTokenizer::isStringConstant(string s)
 {
-    return false;
+    if (s[0] != '"' || s[s.length() - 1] != '"')
+    {
+        return false;
+    }
+    for (int i = 1; i < s.length() - 1; i++)
+    {
+        if (s[i] == '\n' || s[i] == '"')
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
-bool JackTokenizer::isIdentifier(string s)
+bool JackTokenizer::isIdentifier(const string& s)
 {
-    return false;
+    if (isdigit(s[0]))
+    {
+        return false;
+    }
+    for (char i : s)
+    {
+        if (!isalnum(i) && i != '_')
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 
 xmlVarType JackTokenizer::tokenType()
 {
-    return StringConstant;
+    return last_token_type;
 }
 

@@ -7,6 +7,7 @@
 #include "Utils.h"
 #include <fstream>
 #include <map>
+#include <string>
 using namespace std;
 using token = string;
 using xmlVarType = Utils::xml_var_type;
@@ -21,7 +22,7 @@ using xmlVarType = Utils::xml_var_type;
 class JackTokenizer
 {
     token last_token;
-    token last_token_type;
+    xmlVarType last_token_type;
     ifstream & input_file;
     enum keyWords
     {
@@ -37,15 +38,15 @@ class JackTokenizer
     };
     map <string, keyWords> keyWordsMatcher;
     map <string, Symbols> symbolsMatcher;
-    bool isToken(string s);
-    bool isKeyword(string s);
-    bool isSymbol(string s);
-    bool isIntegerConstant(string s);
-    bool isStringConstant(string s);
-    bool isIdentifier(string s);
+    bool isToken(const string& s);
+    bool isKeyword(const string& s);
+    bool isSymbol(const string& s);
+    static bool isIntegerConstant(const string& s);
+    static bool isStringConstant(string s);
+    static bool isIdentifier(const string& s);
 
 public:
-    JackTokenizer(ifstream& input_file);
+    explicit JackTokenizer(ifstream& input_file);
 
     /**
      * advances to the next token
@@ -60,13 +61,13 @@ public:
     token getToken();
 
     // returns next token without advancing
-    token nextToken();
+    static token nextToken();
 
     // return true if token is a binary operation and false otherwise
-    bool isTokenBiOp(token t);
+    bool isTokenBiOp(const token& t);
 
     // return true if token is an unary operation and false otherwise
-    bool isTokenUnOp(token t);
+    bool isTokenUnOp(const token& t);
 
     // returns last token type
     xmlVarType tokenType();
