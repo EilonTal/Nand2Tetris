@@ -43,7 +43,7 @@ void CompilationEngine::compileClass()
 
 void CompilationEngine::compileClassVarDec()
 {
-    outputStartXmlComm(Utils::ClassVerDec, end_line);
+    outputStartXmlComm(Utils::ClassVarDec, end_line);
 
     while (tokenizer.nextToken() == "static" || tokenizer.nextToken() == "field")
     {
@@ -60,7 +60,7 @@ void CompilationEngine::compileClassVarDec()
         outputOneLiner(); // varName identifier is a one-liner
     }
 
-    outputEndXmlComm(Utils::ClassVerDec, end_line);
+    outputEndXmlComm(Utils::ClassVarDec, end_line);
 }
 
 void CompilationEngine::compileSubroutineDec()
@@ -523,8 +523,8 @@ void CompilationEngine::outputXmlCommAux(xmlVarType xml_var_type)
             output << "identifier";
         case Utils::Class:
             output << "class";
-        case Utils::ClassVerDec:
-            output << "classVerDec";
+        case Utils::ClassVarDec:
+            output << "classVarDec";
         case Utils::SubroutineDec:
             output << "subroutineDec";
         case Utils::ParameterList:

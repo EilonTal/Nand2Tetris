@@ -21,25 +21,29 @@ JackTokenizer::JackTokenizer(ifstream &input_file)
     };
 }
 
-// todo
 void JackTokenizer::advance()
 {
     if (!hasMoreTokens())
     {
         return;
     }
+    // skip over spaces in beginning
+    while (input_file.peek() == ' ')
+    {
+        input_file.get();
+    }
     string token_accumulator;
     string accumulator_peek;
     accumulator_peek += std::to_string(input_file.peek());
-    // keep reading if no token was found yet OR next char appended to accumulator is also token
-    while (!isToken(token_accumulator) || isToken(accumulator_peek))
+    // stop reading if current is token and including next character it is not token
+    while (!(isToken(token_accumulator) && !isToken(accumulator_peek)))
     {
         token_accumulator += std::to_string(input_file.get());
         accumulator_peek += std::to_string(input_file.peek());
     }
     last_token = token_accumulator;
-
-    // deal with token type
+    determineTokenType(token_accumulator);
+    handleStringConstant();
 }
 
 bool JackTokenizer::hasMoreTokens()
@@ -56,10 +60,19 @@ token JackTokenizer::getToken()
     return last_token;
 }
 
-// todo
 token JackTokenizer::nextToken()
 {
-    return token();
+    token last_token_copy = last_token;
+    xmlVarType last_token_type_copy = last_token_type;
+    advance();
+    // retreat backwards
+    for (int i = 0; i < last_token.length(); i++)
+    {
+        input_file.unget();
+    }
+    last_token_type = last_token_type_copy;
+    last_token_copy.swap(last_token);
+    return last_token_copy;
 }
 
 bool JackTokenizer::isToken(const string& s)
@@ -218,5 +231,40 @@ bool JackTokenizer::isIdentifier(const string& s)
 xmlVarType JackTokenizer::tokenType()
 {
     return last_token_type;
+}
+
+// token type can be one of the following:
+// keyword, symbol, integerConstant, stringConstant, Identifier.
+void JackTokenizer::determineTokenType(const token& t)
+{
+    if (isKeyword(t))
+    {
+        last_token_type = Utils::Keyword;
+    }
+    else if (isSymbol(t))
+    {
+        last_token_type = Utils::Symbol;
+    }
+    else if (isIntegerConstant(t))
+    {
+        last_token_type = Utils::IntegerConstant;
+    }
+    else if (isStringConstant(t))
+    {
+        last_token_type = Utils::StringConstant;
+    }
+    else if (isIdentifier(t))
+    {
+        last_token_type = Utils::Identifier;
+    }
+}
+
+void JackTokenizer::handleStringConstant()
+{
+    // if its a string constant, then the original is "String Constant", but it needs to be without ""
+    if (last_token_type == Utils::StringConstant)
+    {
+        last_token = last_token.substr(1, last_token.length() - 2);
+    }
 }
 

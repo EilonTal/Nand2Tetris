@@ -12,7 +12,7 @@ public:
     enum xml_var_type
     {
         Keyword, Symbol, IntegerConstant, StringConstant, Identifier,
-        Class, ClassVerDec, SubroutineDec, ParameterList, SubroutineBody,
+        Class, ClassVarDec, SubroutineDec, ParameterList, SubroutineBody,
         VarDec, LetStatement, IfStatement, WhileStatement, DoStatement,
         ReturnStatement, Expression, Term, ExpressionList, Op,
         UnaryOp, KeywordConstant, Statements

@@ -21,9 +21,6 @@ using xmlVarType = Utils::xml_var_type;
  */
 class JackTokenizer
 {
-    token last_token;
-    xmlVarType last_token_type;
-    ifstream & input_file;
     enum keyWords
     {
         Class, Constructor, Function, Method, Field, Static,
@@ -36,6 +33,10 @@ class JackTokenizer
         Dot, Comma, SemiColon, Plus, Minus, Multiplication, Division, And, Or,
         SmallerThan, BiggerThan, Equals, Inverse
     };
+
+    token last_token;
+    xmlVarType last_token_type;
+    ifstream & input_file;
     map <string, keyWords> keyWordsMatcher;
     map <string, Symbols> symbolsMatcher;
     bool isToken(const string& s);
@@ -44,7 +45,8 @@ class JackTokenizer
     static bool isIntegerConstant(const string& s);
     static bool isStringConstant(string s);
     static bool isIdentifier(const string& s);
-
+    void determineTokenType(const token& t);
+    void handleStringConstant();
 public:
     explicit JackTokenizer(ifstream& input_file);
 
@@ -61,7 +63,7 @@ public:
     token getToken();
 
     // returns next token without advancing
-    static token nextToken();
+    token nextToken();
 
     // return true if token is a binary operation and false otherwise
     bool isTokenBiOp(const token& t);
