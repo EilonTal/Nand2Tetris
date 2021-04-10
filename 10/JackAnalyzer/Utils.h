@@ -17,7 +17,6 @@ public:
         ReturnStatement, Expression, Term, ExpressionList, Op,
         UnaryOp, KeywordConstant, Statements
     };
-    // needs to add a symbol table
 };
 
 

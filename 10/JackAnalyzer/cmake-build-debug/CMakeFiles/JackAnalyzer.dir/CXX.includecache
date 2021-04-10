@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.cpp
+CompilationEngine.h
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
+
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
+fstream
+-
+JackTokenizer.h
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
+
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackAnalyzer.cpp
+filesystem
+-
+string
+-
+CompilationEngine.h
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
+
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.cpp
+JackTokenizer.h
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
+
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
+Utils.h
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/Utils.h
+fstream
+-
+map
+-
+string
+-
+
+C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/Utils.h
+

@@ -62,7 +62,7 @@ void handleLinesFromFile(string path_to_file)
 
 int main(int argc, char ** argv)
 {
-    string input_path_str = argv[1];
+    string input_path_str = "C:\\Users\\eilon\\Desktop\\Nand2Tetris\\10\\ArrayTest\\Main.jack";
     if (std::filesystem::is_directory(input_path_str))
         handleLinesFromDir(input_path_str);
     else
