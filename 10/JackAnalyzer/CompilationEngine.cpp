@@ -15,7 +15,7 @@ CompilationEngine::CompilationEngine(ifstream &input, ostream &output) :
 void CompilationEngine::compileClass()
 {
     outputStartXmlComm(Utils::Class, end_line);
-    outputIdentation
+    //outputIdentation
     // get class token
     tokenizer.advance();
     outputOneLiner();
