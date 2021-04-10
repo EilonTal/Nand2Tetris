@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator
+# Install script for directory: C:/Users/Roe/Documents/GitHub/Nand2Tetris/07/My VM Translator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/eilon/Desktop/Nand2Tetris/07/My VM Translator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Roe/Documents/GitHub/Nand2Tetris/07/My VM Translator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

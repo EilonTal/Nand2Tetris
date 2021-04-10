@@ -4,7 +4,7 @@
 
 #include "CompilationEngine.h"
 
-CompilationEngine::CompilationEngine(ifstream &input, ofstream &output) :
+CompilationEngine::CompilationEngine(ifstream &input, ostream &output) :
     output(output), tokenizer(input)
 {
     if (tokenizer.hasMoreTokens())
@@ -15,7 +15,7 @@ CompilationEngine::CompilationEngine(ifstream &input, ofstream &output) :
 void CompilationEngine::compileClass()
 {
     outputStartXmlComm(Utils::Class, end_line);
-
+    outputIdentation
     // get class token
     tokenizer.advance();
     outputOneLiner();
@@ -489,7 +489,7 @@ void CompilationEngine::outputStartXmlComm(xmlVarType xml_var_type, bool shouldE
 {
     output << "<";
     outputXmlCommAux(xml_var_type);
-    output << ">";
+    output << "> ";
     if (shouldEndLine)
     {
         output << endl;
@@ -513,59 +513,81 @@ void CompilationEngine::outputXmlCommAux(xmlVarType xml_var_type)
     {
         case Utils::Keyword:
             output << "keyword";
+            break;
         case Utils::Symbol:
             output << "symbol";
+            break;
         case Utils::IntegerConstant:
             output << "integerConstant";
+            break;
         case Utils::StringConstant:
             output << "stringConstant";
+            break;
         case Utils::Identifier:
             output << "identifier";
+            break;
         case Utils::Class:
             output << "class";
+            break;
         case Utils::ClassVarDec:
             output << "classVarDec";
+            break;
         case Utils::SubroutineDec:
             output << "subroutineDec";
+            break;
         case Utils::ParameterList:
             output << "parameterList";
+            break;
         case Utils::SubroutineBody:
             output << "subroutineBody";
+            break;
         case Utils::VarDec:
             output << "varDec";
+            break;
         case Utils::LetStatement:
             output << "letStatement";
+            break;
         case Utils::IfStatement:
             output << "ifStatement";
+            break;
         case Utils::WhileStatement:
             output << "whileStatement";
+            break;
         case Utils::DoStatement:
             output << "doStatement";
+            break;
         case Utils::ReturnStatement:
             output << "returnStatement";
+            break;
         case Utils::Expression:
             output << "expression";
+            break;
         case Utils::Term:
             output << "term";
+            break;
         case Utils::ExpressionList:
             output << "expressionList";
+            break;
         case Utils::Op:
             output << "op";
+            break;
         case Utils::UnaryOp:
             output << "unaryOp";
+            break;
         case Utils::KeywordConstant:
             output << "keywordConstant";
+            break;
         case Utils::Statements:
             output << "statements";
+            break;
     }
 }
 
 void CompilationEngine::outputOneLiner()
 {
     outputStartXmlComm(tokenizer.tokenType());
-    output << tokenizer.getToken();
+    output << tokenizer.getToken() << " ";
     outputEndXmlComm(tokenizer.tokenType(), end_line);
-    output << endl;
 }
 
 

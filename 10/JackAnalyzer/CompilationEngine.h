@@ -6,11 +6,12 @@
 #define JACKANALYZER_COMPILATIONENGINE_H
 
 #include <fstream>
+#include <iostream>
 #include "JackTokenizer.h"
 
 class CompilationEngine
 {
-    ofstream & output;
+    ostream & output;
     JackTokenizer tokenizer;
     const bool end_line = true;
     void outputStartXmlComm(xmlVarType xml_var_type, bool shouldEndLine = false);
@@ -18,7 +19,7 @@ class CompilationEngine
     void outputXmlCommAux(xmlVarType xml_var_type);
     void outputOneLiner();
 public:
-    CompilationEngine(ifstream& input, ofstream & output);
+    CompilationEngine(ifstream& input, ostream & output);
     void compileClass();
     void compileClassVarDec();
     void compileSubroutineDec();

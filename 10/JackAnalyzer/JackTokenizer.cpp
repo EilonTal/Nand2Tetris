@@ -34,15 +34,39 @@ void JackTokenizer::advance()
     }
     string token_accumulator;
     string accumulator_peek;
-    accumulator_peek += std::to_string(input_file.peek());
+    accumulator_peek += std::string(1,input_file.peek());
     // stop reading if current is token and including next character it is not token
-    while (!(isToken(token_accumulator) && !isToken(accumulator_peek)))
+    while (!(isToken(token_accumulator) && !isToken(accumulator_peek)
+    && accumulator_peek != "//" && accumulator_peek != "/*"))
     {
-        token_accumulator += std::to_string(input_file.get());
-        accumulator_peek += std::to_string(input_file.peek());
+        token_accumulator += std::string(1,input_file.get());
+        accumulator_peek += std::string(1,input_file.peek());
+        if (token_accumulator == "//")
+        {
+            string temp;
+            getline(input_file,temp);
+            token_accumulator.clear();
+            accumulator_peek = std::string(1,input_file.peek());
+        }
+        if (token_accumulator == "\n")
+        {
+            token_accumulator.clear();
+            accumulator_peek = std::string(1,input_file.peek());
+        }
+        if (token_accumulator == "/**")
+        {
+            string temp;
+            getline(input_file,temp);
+            while (temp.find("*/") == string::npos)
+            {
+                getline(input_file,temp);
+            }
+            token_accumulator.clear();
+            accumulator_peek = std::string(1,input_file.peek());
+        }
     }
-    last_token = token_accumulator;
-    determineTokenType(token_accumulator);
+    last_token = Utils::trim(token_accumulator);
+    determineTokenType(last_token);
     handleStringConstant();
 }
 
@@ -77,7 +101,8 @@ token JackTokenizer::nextToken()
 
 bool JackTokenizer::isToken(const string& s)
 {
-    if (isKeyword(s) || isSymbol(s) || isIntegerConstant(s) || isStringConstant(s) || isIdentifier(s))
+    string temp = Utils::trim(s);
+    if (isKeyword(temp) || isSymbol(temp) || isIntegerConstant(temp) || isStringConstant(temp) || isIdentifier(temp))
     {
         return true;
     }
@@ -86,95 +111,39 @@ bool JackTokenizer::isToken(const string& s)
 
 bool JackTokenizer::isTokenBiOp(const token& t)
 {
-    switch (symbolsMatcher[t])
-    {
-        case Plus:
-        case Minus:
-        case Multiplication:
-        case Division:
-        case And:
-        case Or:
-        case SmallerThan:
-        case BiggerThan:
-        case Equals:
-            return true;
-        default:
-            return false;
-    }
+   if (symbolsMatcher.contains(t))
+   {
+       return true;
+   }
+   return false;
 }
 
 bool JackTokenizer::isTokenUnOp(const token& t)
 {
-    switch (symbolsMatcher[t])
+    if (symbolsMatcher.contains(t))
     {
-        case Inverse:
-        case Minus:
-            return true;
-        default:
-            return false;
+        return true;
     }
+    return false;
 }
 
 
 
 bool JackTokenizer::isKeyword(const string& s)
 {
-    switch (keyWordsMatcher[s])
+    if (keyWordsMatcher.contains(s))
     {
-        case Class:
-        case Constructor:
-        case Function:
-        case Method:
-        case Field:
-        case Static:
-        case Var:
-        case Int:
-        case Char:
-        case Boolean:
-        case Void:
-        case True:
-        case False:
-        case Null:
-        case This:
-        case Let:
-        case Do:
-        case If:
-        case Else:
-        case While:
-        case Return:
-            return true;
-        default:
-            return false;
+        return true;
     }
+    return false;
 }
 
-bool JackTokenizer::isSymbol(const string& s)
-{
-    switch (symbolsMatcher[s])
+bool JackTokenizer::isSymbol(const string& s) {
+    if (symbolsMatcher.contains(s))
     {
-        case OpenCurly:
-        case CloseCurly:
-        case OpenBrackets:
-        case CloseBrackets:
-        case OpenSquare:
-        case CloseSquare:
-        case Dot:
-        case Comma:
-        case SemiColon:
-        case Plus:
-        case Minus:
-        case Multiplication:
-        case Division:
-        case And:
-        case Or:
-        case SmallerThan:
-        case BiggerThan:
-        case Equals:
-        case Inverse:
-            return true;
-        default:
-            return false;
+        return true;
     }
+    return false;
 }
 
 bool JackTokenizer::isIntegerConstant(const string& s)
@@ -213,7 +182,7 @@ bool JackTokenizer::isStringConstant(string s)
 
 bool JackTokenizer::isIdentifier(const string& s)
 {
-    if (isdigit(s[0]))
+    if (isdigit(s[0]) || s.empty())
     {
         return false;
     }

@@ -3,6 +3,7 @@
 //
 
 #include <filesystem>
+#include <iostream>
 #include <string>
 #include "CompilationEngine.h"
 using namespace std;
@@ -51,18 +52,15 @@ void handleLinesFromDir(string path_to_dir)
 void handleLinesFromFile(string path_to_file)
 {
     ifstream input_file (path_to_file);
-    ofstream output_file (getNameOfOutputFile(path_to_file));
-    string full_file_name_without_suffix = path_to_file.substr(0, path_to_file.find(".jack"));
-    string file_name_without_suffix = full_file_name_without_suffix.substr
-            (full_file_name_without_suffix.find_last_of('\\') + 1);
-    CompilationEngine compiler(input_file, output_file);
+  //  ofstream output_file (getNameOfOutputFile(path_to_file));
+    CompilationEngine compiler(input_file, std::cout);
     input_file.close();
-    output_file.close();
+    //output_file.close();
 }
 
 int main(int argc, char ** argv)
 {
-    string input_path_str = "C:\\Users\\eilon\\Desktop\\Nand2Tetris\\10\\ArrayTest\\Main.jack";
+    string input_path_str = "C:\\Users\\Roe\\Documents\\GitHub\\Nand2Tetris\\10\\ArrayTest\\Main.jack";
     if (std::filesystem::is_directory(input_path_str))
         handleLinesFromDir(input_path_str);
     else

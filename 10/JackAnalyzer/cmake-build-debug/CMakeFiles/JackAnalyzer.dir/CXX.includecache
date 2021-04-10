@@ -6,31 +6,21 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.cpp
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/CompilationEngine.cpp
 CompilationEngine.h
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
 
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
 fstream
 -
-JackTokenizer.h
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
-
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackAnalyzer.cpp
-filesystem
+iostream
 -
-string
--
-CompilationEngine.h
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
-
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.cpp
 JackTokenizer.h
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
 
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
 Utils.h
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/Utils.h
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/Utils.h
 fstream
 -
 map
@@ -38,5 +28,7 @@ map
 string
 -
 
-C:/Users/eilon/Desktop/Nand2Tetris/10/JackAnalyzer/Utils.h
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/Utils.h
+string
+-
 
