@@ -47,6 +47,7 @@ class JackTokenizer
     static bool isIdentifier(const string& s);
     void determineTokenType(const token& t);
     void handleStringConstant();
+    bool isSameToken(const token& t1, const token& t2);
 public:
     explicit JackTokenizer(ifstream& input_file);
 

@@ -29,10 +29,17 @@ void CompilationEngine::compileClass()
     outputOneLiner();
 
     // get class variables declarations , dont advance until entering the functions
-    compileClassVarDec();
+    if (tokenizer.nextToken() == "static" || tokenizer.nextToken() == "field")
+    {
+        compileClassVarDec();
+    }
 
     // get class subroutines declarations
-    compileSubroutineDec();
+    if (tokenizer.nextToken() == "constructor" || tokenizer.nextToken() == "function"
+        || tokenizer.nextToken() == "method")
+    {
+        compileSubroutineDec();
+    }
 
     // get '}'
     tokenizer.advance();
@@ -126,9 +133,17 @@ void CompilationEngine::compileSubroutineBody()
 {
     outputStartXmlComm(Utils::SubroutineBody, end_line);
 
+    // outputs {
+    tokenizer.advance();
+    outputOneLiner();
+
     compileVarDec();
 
     compileStatements();
+
+    // outputs }
+    tokenizer.advance();
+    outputOneLiner();
 
     outputEndXmlComm(Utils::SubroutineBody, end_line);
 

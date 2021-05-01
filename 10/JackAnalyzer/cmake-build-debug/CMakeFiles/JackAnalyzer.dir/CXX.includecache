@@ -6,15 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/CompilationEngine.cpp
-CompilationEngine.h
-C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
-
-C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/CompilationEngine.h
-fstream
--
-iostream
--
+C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/JackTokenizer.cpp
 JackTokenizer.h
 C:/Users/Roe/Documents/GitHub/Nand2Tetris/10/JackAnalyzer/JackTokenizer.h
 

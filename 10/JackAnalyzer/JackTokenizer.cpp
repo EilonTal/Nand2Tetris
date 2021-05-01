@@ -36,8 +36,9 @@ void JackTokenizer::advance()
     string accumulator_peek;
     accumulator_peek += std::string(1,input_file.peek());
     // stop reading if current is token and including next character it is not token
-    while (!(isToken(token_accumulator) && !isToken(accumulator_peek)
-    && accumulator_peek != "//" && accumulator_peek != "/*"))
+    while (!isSameToken(token_accumulator,accumulator_peek) &&
+            (!isToken(token_accumulator) || isToken(accumulator_peek)
+    || accumulator_peek == "//" || accumulator_peek == "/*"))
     {
         token_accumulator += std::string(1,input_file.get());
         accumulator_peek += std::string(1,input_file.peek());
@@ -48,7 +49,8 @@ void JackTokenizer::advance()
             token_accumulator.clear();
             accumulator_peek = std::string(1,input_file.peek());
         }
-        if (token_accumulator == "\n")
+        if (token_accumulator == "\t" || token_accumulator == "\n" || token_accumulator == "\v"
+        || token_accumulator == "\f" || token_accumulator == "\r")
         {
             token_accumulator.clear();
             accumulator_peek = std::string(1,input_file.peek());
@@ -235,5 +237,12 @@ void JackTokenizer::handleStringConstant()
     {
         last_token = last_token.substr(1, last_token.length() - 2);
     }
+}
+
+bool JackTokenizer::isSameToken(const token& t1, const token& t2)
+{
+    string temp1 = Utils::trim(t1);
+    string temp2 = Utils::trim(t2);
+    return isToken(t1) && isToken(t2) && temp1 == temp2;
 }
 
