@@ -48,6 +48,7 @@ class JackTokenizer
     void determineTokenType(const token& t);
     void handleStringConstant();
     bool isSameToken(const token& t1, const token& t2);
+    static int i;
 public:
     explicit JackTokenizer(ifstream& input_file);
 
@@ -76,6 +77,5 @@ public:
     xmlVarType tokenType();
 
 };
-
 
 #endif //JACKANALYZER_JACKTOKENIZER_H
