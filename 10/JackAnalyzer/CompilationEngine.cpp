@@ -151,11 +151,10 @@ void CompilationEngine::compileSubroutineBody()
 
 void CompilationEngine::compileVarDec()
 {
+    outputStartXmlComm(Utils::VarDec, end_line);
 
     while (tokenizer.nextToken() == "var")
     {
-        outputStartXmlComm(Utils::VarDec, end_line);
-
         // output 'var'
         tokenizer.advance();
         outputOneLiner();
@@ -182,10 +181,9 @@ void CompilationEngine::compileVarDec()
         // output ';'
         tokenizer.advance();
         outputOneLiner();
-
-        outputEndXmlComm(Utils::VarDec, end_line);
     }
 
+    outputEndXmlComm(Utils::VarDec, end_line);
 }
 
 void CompilationEngine::compileStatements()
