@@ -1,5 +1,7 @@
 #include "JackTokenizer.h"
 
+int JackTokenizer::i=0;
+
 
 JackTokenizer::JackTokenizer(ifstream &input_file)
         : input_file(input_file), last_token()
@@ -23,6 +25,8 @@ JackTokenizer::JackTokenizer(ifstream &input_file)
 
 void JackTokenizer::advance()
 {
+    i++;
+    char temp = input_file.peek();
     if (!hasMoreTokens())
     {
         return;
@@ -68,6 +72,7 @@ void JackTokenizer::advance()
         }
     }
     last_token = Utils::trim(token_accumulator);
+    temp = input_file.peek();
     determineTokenType(last_token);
     handleStringConstant();
 }
@@ -96,6 +101,12 @@ token JackTokenizer::nextToken()
     {
         input_file.unget();
     }
+    if (last_token_type == Utils::StringConstant)
+    {
+        input_file.unget();
+        input_file.unget();
+    }
+    char temp = input_file.peek();
     last_token_type = last_token_type_copy;
     last_token_copy.swap(last_token);
     return last_token_copy;
@@ -168,7 +179,7 @@ bool JackTokenizer::isIntegerConstant(const string& s)
 // todo (reminder string constant is output without "")
 bool JackTokenizer::isStringConstant(string s)
 {
-    if (s[0] != '"' || s[s.length() - 1] != '"')
+    if (s[0] != '"' || s[s.length() - 1] != '"' || s.length() <= 1)
     {
         return false;
     }
